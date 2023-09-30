@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>assignment</title>
+	<link rel="stylesheet" href="style.css">
+<style>
+*{
+  margin: auto;
+  font-weight: bold
+  height: 100vh;
+  
+  
+}
+#calculator{
+  background-color: white;
+  width: 55%;
+  text-align: center; 
+  align-items: center;
+  margin-top: 60%;
+  padding: 5px;
+  border: 5px solid black;
+  border-radius: 10px;
+}
+
+input{
+  width: 95%;
+  height: 40px;
+}
+
+  button{
+   width: 23%;
+   height: 40px;
+   margin-top: 3px;
+   border: 1px solid black;
+   border-radius: 10px;
+   background-color: aqua;
+   
+  }
+  button:hover{
+    background-color: antiquewhite;
+    transform-style: scale(1.2);
+    transition: 0.3s
+  }
+</style>
+
+</head>
+<body style="background-image: url(Nadeem.jpg); background-size: cover; background-repeat: no-repeat; background-position-x: -65px">
+  
+  <div id="calculator">
+    <h4>Bukhari Calculator</h4>
+   <input type="text" disabled id="input"><br>
+   <div id="d-btn">
+  <button type="button" onclick="back()">Del</button>
+  <button type="button" onclick="clean()">Rst</button>
+  <button type="button" onclick="myFunction('%')">%</button>
+  <button type="button" onclick="myFunction('/')">/</button>
+  <br>
+  <button type="button" onclick="myFunction(7)">7</button>
+  <button type="button" onclick="myFunction(8)">8</button>
+  <button type="button" onclick="myFunction(9)">9</button>
+  <button type="button" onclick="myFunction('*')">x</button>
+  <br>
+  <button type="button" onclick="myFunction(4)">4</button>
+  <button type="button" onclick="myFunction(5)">5</button>
+   <button type="button" onclick="myFunction(6)">6</button>
+   <button type="button" onclick="myFunction('-')">-</button>
+  <br>
+   <button type="button"onClick="myFunction(1)">1</button>
+   <button type="button" onclick="myFunction(2)">2</button>
+  <button type="button" onclick="myFunction(3)">3</button>
+  <button type="button" onclick="myFunction('+')">+</button>
+  <br>
+  <button type="reset" onclick="rst()">+/-</button>
+  <button type="button" onclick="myFunction(0)">0</button>
+  <button type="button" onclick="myFunction('.')">.</button>
+  <button type="button" onclick="calculat()">=</button>
+  
+   </div>
+      </div>
+   
+<script src="calculator.js"></script>
+</body>
+</html>
+
+
+
+
+
+

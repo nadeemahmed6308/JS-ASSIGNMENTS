@@ -1,0 +1,17 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+#btn{
+    width: 90%;
+    border: 6px solid;
+    border-radius: 20px;
+    border-color: blue green yellow;
+}
+#btn:hover{
+     color: darkgrey;
+}
+#nav-top{
+  position: sticky;
+  top: 0
+}
