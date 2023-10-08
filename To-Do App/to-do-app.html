@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>To-Do App assignment</title>
+  <!-----<link rel="stylesheet" href="bootstrap.min.css">----->
+ <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  
+  
+ <div align="center" class="todoapp">
+  <h1>To-Do App</h1>
+  
+<input id="input" type="text" placeholder="type any text" />
+<button id="add_btn" onclick="addItem(event)">add</button>
+<button  id="update_btn" class="hide" onclick="updateBtn(event)">update</button>
+<button id="dltBtn" onclick="deleteAll(event)">Delete All</button>
+    
+
+<div id="data">
+  <ol id="list">
+  </ol>
+</div>
+
+
+ </div>
+
+<script src="todo.js">todo.js</script>
+</body>
+</html>
