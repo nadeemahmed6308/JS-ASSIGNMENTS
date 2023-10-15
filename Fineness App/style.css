@@ -1,0 +1,14 @@
+ body{
+      background-image: url('Add-Files.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+  margin-top: 5%
+    }
+    
+    #main{
+      margin-top: 10%;
+      margin-left: 10%;
+    }
+    table{
+      margin-left: 1%;
+    }
