@@ -1,57 +1,96 @@
-// global variable amount ko store karne keliye take new amount se calculat kar saken
 var cont = 0;
-// 1 assa function jo 2no buttons ki value ko alag alag type ke sath print kare 
-function addTransaction(type){
-  // description input ki id
-  var desc = document.getElementById('description');
-  // amount input ki id
+    var currentEditElement = '';
+    
+    function addTransaction(type) {
+      var desc = document.getElementById('description');
+      var amount = document.getElementById('Amount');
+      var table = document.getElementById('table');
+
+    if(desc.value && amount.value > 0){
+        var trElement = document.createElement('tr');
+
+        var descTd = document.createElement('td');
+        descTd.innerHTML = desc.value;
+
+        var amountTd = document.createElement('td');
+        amountTd.innerHTML = amount.value;
+
+        var typeTd = document.createElement('td');
+        typeTd.innerHTML = type;
+
+        var editTd = document.createElement('td');
+
+    var editButton = document.createElement('button');
+    editButton.innerHTML = 'Edit';
+
+  editButton.onclick = function(event){
+    var income = document.getElementById('income');
+    income.className = 'hide';
+    
+    var update = document.getElementById('update');
+    update.className = '';
+   
+    amount.value = amountTd.innerHTML;
+    desc.value = descTd.innerHTML;
+
+    currentEditElement = amountTd;
+        
+  var edit_amount = event.target.parentElement.previousSibling.previousSibling.innerHTML;
+ 
+var y = +total.innerHTML - +edit_amount;
+       total.innerHTML = y;
+  };
+  editTd.append(editButton);
+    
+  var deleteTd = document.createElement('td');
+  var deleteButton = document.createElement('button');
+  deleteButton.innerHTML = 'Delete';
+  
+deleteButton.onclick = function(event){
+  var deleteTr = event.target.parentElement.parentElement;
+  deleteTr.remove();
+
+  total.innerHTML = +total.innerHTML - +event.target.parentElement.previousSibling.previousSibling.previousSibling.innerHTML;
+};
+deleteTd.append(deleteButton);
+
+        trElement.append(descTd);
+        trElement.append(amountTd);
+        trElement.append(typeTd);
+        trElement.append(editTd);
+        trElement.append(deleteTd);
+        table.append(trElement);
+      };
+
+      if (type === 'income'){ 
+        cont = +cont + +amountTd.innerHTML;
+      }
+      if (type === 'expense'){ 
+      cont = cont - amountTd.innerHTML;
+      }
+
+    var total = document.getElementById('total');
+    total.innerHTML = cont;
+
+      desc.value = '';
+      amount.value = '';
+    };
+
+  function upload(){
+  var income = document.getElementById('income');
+  income.className = '';
+  
+  var update = document.getElementById('update');
+  update.className = 'hide';
+      
   var amount = document.getElementById('Amount');
-  // table ki id
-  var table = document.getElementById('table');
-  
-//empty input par button kaam nhi karen
-  if(desc.value && amount.value > 0){
-  // 1 new tr bana kar rakha badme iske ander td ko append karenge
-  var trElement = document.createElement('tr');
-  
-  // 1 new td banaya usko description ki value di
-  var descTd = document.createElement('td');
-  descTd.innerHTML = desc.value;
-  
- // 1 new td banaya usko amount ki value di
-  var amountTd = document.createElement('td');
-  amountTd.innerHTML = amount.value;
-  
-// 1 new td banaya usko function wala type diya take jo bhi type ho har bar ye khud chenge kare 
-  var typeTd = document.createElement('td');
-  typeTd.innerHTML = type;
-  
-// oper jo tr bakaya tha is 3no td ko one by one isme append karenge
-  trElement.append(descTd);
-  trElement.append(amountTd);
-  trElement.append(typeTd);
-  
-  // ab is tr ko table me append karden
-  table.append(trElement);
-  
-//if close 
-}
+      
+  total.innerHTML = +total.innerHTML + +amount.value;
 
-if (typeTd.innerHTML === 'income') {
-  //jo new typeTd banai he iska text equal he income ke to new amountTd ko global variable men + karden
-  cont = +cont + +amountTd.innerHTML
-  
-} if(typeTd.innerHTML === 'expense') {
-  //jo new typeTd banai he iska text equal he income ke to new amountTd ko global variable men - karden
-  cont = cont - amountTd.innerHTML
-}
+  currentEditElement.innerHTML = amount.value; 
 
-// Html men total show karna he uski I'd 
-// ke text ko eequal karden global variable ke
-var total = document.getElementById('total');
-total.innerHTML = cont;
-
-//clear input
-desc.value = '';
-amount.value = '';
-}
+  var desc = document.getElementById('description');
+  var amount = document.getElementById('Amount');
+  desc.value = '';
+  amount.value = '';
+  }
