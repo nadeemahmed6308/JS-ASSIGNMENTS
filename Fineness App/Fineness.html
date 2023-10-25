@@ -10,45 +10,49 @@
 </head>
 <body>
   
- <div id="main">
-     
- <input type="text" placeholder="description" id="description"><br>
- 
+ <div class="main">
+    
+  <input type="text" placeholder="description" id="description"><br>
+
   <input type="number" placeholder="Amount" id="Amount"><br>
-
-<button id="income" onclick="addTransaction('income')">Add Amount</button>
-<button id="expensee" onclick="addTransaction('expense')">Add Expense</button><br><br>
-
-
-<table id="table" border="1">
   
- <thead>
-    <tr>
-      <th>description</th>
-      <th>Amount</th>
-      <th>Type</th>
-    </tr>
- </thead>
+ <div class="btnD">
+  <button class="btn" id="income" onclick="addTransaction('income')">Add Amount</button>
   
-   <tbody id="transactionList">
-   </tbody>
-   
-  <tfoot>
-    <tr>
+  <button id="update" onclick="upload()" class="hide">Update</button>
+  
+  <button class="btn" id="expensee" onclick="addTransaction('expense')">Add Expense</button><br>
+ 
+  </div>
+  </div>
+  
+  <table id="table" border="1">
+    <thead>
+      <tr>
+        <th>description</th>
+        <th>Amount</th>
+        <th>Type</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tbody id="transactionList">
+    <!---yahan data add hoga--->
+    </tbody>
+
+    <tfoot>
+      <tr>
+  <td style="text-align: center">Total :</td>
+  
+  <td id="total">0</td>
+  
+  <td colspan="3" style="text-align: center">
+    Nadeem Ahmed
+      </td>
       
-     <td style="text-align: center">Total :</td>
-     
-       <td id="total">0</td>
-       
-      <td style="text-align: center">
-        <img width="20px" src="smiling-face-with-halo-svgrepo-com.svg" alt=""></td>
-       
-    </tr>
-  </tfoot>
-  
-</table>
-
-</div>
-
+      </tr>
+    </tfoot>
+  </table>
 </body>
 </html>
