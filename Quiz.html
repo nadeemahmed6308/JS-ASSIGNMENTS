@@ -7,17 +7,14 @@
   <title></title>
   <link rel="stylesheet" href="Quiz.css">
   <script src="Quiz.js"></script>
-  <style>
-    .hide{
-      display: none;
-    }
-  </style>
 </head>
 <body>
   
 <button onclick="startBtn()">start Questions</button>
 
 <div id="quiz-container" class="hide">
+ 
+<p>Timer : <span id="timer">30</span> seconds</p>
  
   <h2 id="title"></h2>
   
@@ -32,9 +29,6 @@
 </div>
 
 <button id="rst" onclick="restart()"  class="hide">restart</button>
-
-
-
 
 </body>
 </html>
